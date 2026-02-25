@@ -1,0 +1,28 @@
+name: 01 - Building Blocks
+
+# ข้อ 3: เริ่มต้นด้วย Trigger สองตัว
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  # Job ที่ 1 (ข้อ 4.a)
+  echo-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello, World!"
+
+  # Job ที่ 2 (ข้อ 4.b)
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Failed step
+        # ข้อ 4.b.i: ใช้เครื่องหมาย | เพื่อเขียนหลายบรรทัด
+        run: |
+          echo "I will fail"
+          exit 1
+      
+      - name: Say goodbye
+        # ข้อ 4.b.ii: Step นี้จะไม่ทำงานถ้า Step ก่อนหน้า Fail (ตามค่า Default)
+        run: echo "Goodbye!"
