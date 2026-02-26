@@ -11,9 +11,9 @@ jobs:
               run: echo "Hello world"
         
             - name: Check Python
-              run: echo python --version
+              run: python --version
             
             - name: Check Docker
-              run: echo docker --version
+              run: docker --version
 
     
