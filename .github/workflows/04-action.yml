@@ -1,0 +1,19 @@
+name: First Try
+
+on: push
+
+jobs:
+    test-install:
+        runs-on: ubuntu-latest
+
+        steps: 
+            - name: Greeting
+              run: echo "Hello world"
+        
+            - name: Check Python
+              run: echo python --version
+            
+            - name: Check Docker
+              run: echo docker --version
+
+    
